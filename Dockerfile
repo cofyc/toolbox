@@ -9,4 +9,6 @@ RUN apt-get update \
     util-linux \
     e2fsprogs \
     bash \
-    fio
+    fio \
+    iproute2 \
+    strace

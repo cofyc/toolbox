@@ -3,5 +3,9 @@
 ## examples
 
 ```
-docker run -it --rm --network container:<container-id> quay.io/cofyc/toolbox
+docker run -it --rm --network container:<container-id> cofyc/toolbox
 ```
+
+## alternative images
+
+- quay.io/cofyc/toolbox
