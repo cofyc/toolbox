@@ -11,4 +11,5 @@ RUN apt-get update \
     bash \
     fio \
     iproute2 \
-    strace
+    strace \
+    dnsutils
