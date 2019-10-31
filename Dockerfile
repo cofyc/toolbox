@@ -12,4 +12,5 @@ RUN apt-get update \
     fio \
     iproute2 \
     strace \
-    dnsutils
+    dnsutils \
+    procps
