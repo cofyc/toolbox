@@ -1,6 +1,6 @@
 # For security, we use kubernetes community maintained debian base image.
 # https://github.com/kubernetes/kubernetes/blob/master/build/debian-base/
-FROM k8s.gcr.io/debian-base:0.4.1
+FROM k8s.gcr.io/debian-base:v1.0.0
 
 # Keep packages up to date and install packages for our needs.
 RUN apt-get update \
@@ -14,3 +14,7 @@ RUN apt-get update \
     strace \
     dnsutils \
     procps
+
+ADD init.bashrc /etc/profile.d/
+
+CMD ["/bin/bash"]
