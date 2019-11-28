@@ -13,7 +13,9 @@ RUN apt-get update \
     iproute2 \
     strace \
     dnsutils \
-    procps
+    procps \
+    netcat \
+    telnet
 
 ADD init.bashrc /etc/profile.d/
 
