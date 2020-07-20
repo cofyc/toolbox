@@ -5,5 +5,8 @@ all: build
 build:
 	docker build -t cofyc/toolbox:latest .
 
-run: build
+push:
+	docker push cofyc/toolbox:latest
+
+run:
 	docker run -it --rm cofyc/toolbox:latest
