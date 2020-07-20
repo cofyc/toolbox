@@ -1,0 +1,26 @@
+name: build
+
+on:
+  pull_request:
+    branches:
+    - master
+  push:
+    branches:
+    - master
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out
+      uses: actions/checkout@v1
+    - name: Build images
+      run: make build
+    - name: Push images
+      run: make push
+      if: ( github.event_name == 'push' && github.ref == 'refs/heads/master' ) || ( github.event_name == 'schedule' )
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
