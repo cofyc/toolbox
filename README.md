@@ -3,7 +3,7 @@
 ## examples
 
 ```
-docker run -it --rm --network container:<container-id> cofyc/toolbox
+docker run -it --rm --net container:$CONTAINER_ID --pid container:$CONTAINER_ID cofyc/toolbox
 ```
 
 ```

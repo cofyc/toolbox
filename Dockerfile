@@ -16,7 +16,8 @@ RUN apt-get update \
     procps \
     netcat \
     telnet \
-    rsync
+    rsync \
+    curl
 
 ADD init.bashrc /etc/profile.d/
 
