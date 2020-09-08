@@ -15,7 +15,8 @@ RUN apt-get update \
     dnsutils \
     procps \
     netcat \
-    telnet
+    telnet \
+    rsync
 
 ADD init.bashrc /etc/profile.d/
 
