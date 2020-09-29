@@ -18,9 +18,16 @@ jobs:
       uses: actions/checkout@v1
     - name: Build images
       run: make build
-    - name: Push images
+    - name: Push image to the default registry
       run: make push
       if: ( github.event_name == 'push' && github.ref == 'refs/heads/master' ) || ( github.event_name == 'schedule' )
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Push image to aliyun
+      run: make push
+      if: ( github.event_name == 'push' && github.ref == 'refs/heads/master' ) || ( github.event_name == 'schedule' )
+      env:
+        DOCKER_USERNAME: ${{ secrets.ALIYUN_DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.ALIYUN_DOCKER_PASSWORD }}
+        DOCKER_IMAGE: registry.cn-shanghai.aliyuncs.com/fuyecheng/toolbox
