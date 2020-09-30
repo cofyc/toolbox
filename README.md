@@ -13,3 +13,10 @@ kubectl run -n default -it --rm toolbox --generator=run-pod/v1 --image cofyc/too
 ## alternative images
 
 - registry.cn-shanghai.aliyuncs.com/fuyecheng/toolbox:latest
+
+
+## change mirror
+
+```
+sed -i -r 's/(deb|security).debian.org/mirrors.aliyun.com/g'
+```
