@@ -18,5 +18,5 @@ kubectl run -n default -it --rm toolbox --generator=run-pod/v1 --image cofyc/too
 ## change mirror
 
 ```
-sed -i -r 's/(deb|security).debian.org/mirrors.aliyun.com/g'
+sed -i -r 's/(deb|security).debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
 ```

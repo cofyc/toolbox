@@ -35,9 +35,11 @@ RUN apt-get update \
     netcat \
     telnet \
     rsync \
+    vim \
     curl
 
 ADD init.bashrc /etc/profile.d/
+ADD vimrc /root/.vimrc
 
 COPY --from=builder /usr/local/bin/wrk /usr/local/bin/wrk
 
