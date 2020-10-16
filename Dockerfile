@@ -36,6 +36,7 @@ RUN apt-get update \
     telnet \
     rsync \
     vim \
+    lsof \
     curl
 
 ADD init.bashrc /etc/profile.d/
